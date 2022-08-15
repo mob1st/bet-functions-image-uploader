@@ -1,0 +1,26 @@
+{
+  "name": "bet-functions-image-uploader",
+  "version": "1.0.0",
+  "description": "Download a list of files and upload it to Firebase Storage Bucket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx functions-framework --target=bet-football"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mob1st/bet-functions-image-uploader.git"
+  },
+  "author": "Pablo Baldez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mob1st/bet-functions-image-uploader/issues"
+  },
+  "homepage": "https://github.com/mob1st/bet-functions-image-uploader#readme",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.1.2",
+    "@google-cloud/storage": "^6.4.0",
+    "axios": "^0.27.2",
+    "firebase-admin": "^11.0.1"
+  }
+}
