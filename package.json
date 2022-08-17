@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx functions-framework --target=bet-football"
+    "start": "npx functions-framework --target=bet-image-uploader"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "@google-cloud/functions-framework": "^3.1.2",
     "@google-cloud/storage": "^6.4.0",
     "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
     "firebase-admin": "^11.0.1"
   }
 }

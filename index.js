@@ -1,16 +1,21 @@
+require('dotenv').config();
 const functions = require('@google-cloud/functions-framework');
+const repository = require('./src/file-repository');
 
 functions.http('bet-image-uploader', async (req, res) => {    
-    try {
-        _assertMethod('POST', req.method);
-        return res.status(200).send({message: 'success top'}).end();
+    try {                
+        _assertMethod('POST', req.method);    
+        const urls = await repository.execute(req.body);
+        const response = JSON.stringify(urls);        
+        console.log('finished', response);
+        return res.status(200).send({ status: 'success', createdFiles: response.length }).end();
     } catch (e) {
         if (e instanceof InvaidHttpMethodError) {
             var statusCode = 405;
         } else {
-            var statusCode = 500;;
-        }   
-        return res.status(statusCode).send(JSON.stringify());     
+            var statusCode = 500;
+        }
+        return res.status(statusCode).send(JSON.stringify(e));
     }
 });
 
